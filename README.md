@@ -14,6 +14,14 @@ Implements a **Full-Stack Task Management API** with **Secure JWT Authentication
 - **Real-time UX:** Instant UI updates and client-side filtering.
 - **Validation:** Server-side and Client-side task validation.
 
+## Project Screenshots
+
+### Authentication Page
+![Login Page](screenshots/login-page.png)
+
+### Task Management Dashboard
+![Dashboard](screenshots/dashboard.png)
+
 ---
 
 ## Run Locally
