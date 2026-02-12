@@ -49,7 +49,7 @@ dotnet run
 
 ```
 
-_The API will be available at: `https://localhost:7123_`
+The API will be available at: `https://localhost:7123`
 
 ### 3. Frontend Setup
 
