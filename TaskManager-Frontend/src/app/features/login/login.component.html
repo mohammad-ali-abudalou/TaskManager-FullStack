@@ -1,0 +1,27 @@
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px;">
+        <h2 class="text-center mb-4 text-primary">Task Manager Login</h2>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" formControlName="username" class="form-control" placeholder="Enter Admin"
+                    [class.is-invalid]="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" formControlName="password" class="form-control" placeholder="Enter Password"
+                    [class.is-invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+            </div>
+
+            <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary w-100 mt-2">
+                Login
+            </button>
+        </form>
+
+        <div *ngIf="this.errorMessage" class="alert alert-danger mt-3 py-2 text-center">
+            {{ this.errorMessage }}
+        </div>
+    </div>
+</div>

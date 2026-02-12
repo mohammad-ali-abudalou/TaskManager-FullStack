@@ -1,0 +1,73 @@
+<div class="container mt-5">
+  <div class="card shadow">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+      <h2 class="mb-0">Smart To-Do List</h2>
+      <span class="badge bg-light text-primary">{{ filteredTasks.length }} Tasks</span>
+      <button (click)="logout()" class="btn btn-outline-light btn-sm">Sign Out</button>
+    </div>
+
+    <div class="card-body">
+      <div class="input-group mb-4">
+        <input type="text" [(ngModel)]="newTask.title" (keyup.enter)="addTask()" class="form-control"
+          placeholder="Task Title...">
+        <input type="text" [(ngModel)]="newTask.description" class="form-control" placeholder="Description">
+        <button (click)="addTask()" class="btn btn-success px-4">Add +</button>
+      </div>
+
+      <input type="text" [(ngModel)]="searchTerm" (input)="filterTasks()" class="form-control mb-3"
+        placeholder="🔍 Search for a specific task...">
+
+      <div *ngIf="filteredTasks.length === 0" class="text-center py-5">
+        <img src="https://cdn-icons-png.flaticon.com/512/5089/5089748.png" width="100" class="mb-3 opacity-50">
+        <p class="text-muted">No tasks available yet.. Start by adding a new task to organize your day!</p>
+      </div>
+
+      <table *ngIf="filteredTasks.length > 0" class="table table-hover ...">
+      </table>
+
+      <div class="table-responsive">
+        <table class="table table-hover align-middle">
+          <thead class="table-light">
+            <tr>
+              <th style="width: 50px;">Completed</th>
+              <th>Task</th>
+              <th>Description</th>
+              <th class="text-center">Actions</th>
+              <th class="text-center">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let t of filteredTasks" [class.table-danger]="t.isDeleted"
+              [style.opacity]="t.isDeleted ? '0.7' : '1'">
+
+              <td>
+                <input type="checkbox" [disabled]="t.isDeleted" [checked]="t.isCompleted" (change)="toggleComplete(t)">
+              </td>
+
+              <td>
+                <span [style.text-decoration]="(t.isCompleted || t.isDeleted) ? 'line-through' : 'none'">
+                  {{ t.title }}
+                </span>
+                <span *ngIf="t.isDeleted" class="badge bg-danger ms-2">Deleted</span>
+              </td>
+
+              <td>{{ t.description }}</td>
+
+              <td class="text-center text-muted small">
+                <span>{{ t.createdAt | timeago }}</span> <br>
+                <span class="text-dark">{{ t.createdAt | date:'dd/MM/yyyy hh:mm a' }}</span>
+              </td>
+
+              <td class="text-center">
+                <button (click)="deleteTask(t.id!)" [disabled]="t.isDeleted || !t.id"
+                  class="btn btn-outline-danger btn-sm">
+                  {{ t.isDeleted ? 'Deleted' : 'Delete' }}
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
