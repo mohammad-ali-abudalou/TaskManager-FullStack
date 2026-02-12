@@ -56,7 +56,7 @@ _The API will be available at: `https://localhost:7123_`
 1. Navigate to the UI folder:
 
 ```bash
-cd TaskManagerUI
+cd TaskManager-Frontend
 
 ```
 
@@ -74,7 +74,7 @@ ng serve
 
 ```
 
-_Open your browser at: `http://localhost:4200_`
+Open your browser at: `http://localhost:4200`
 
 ---
 
@@ -100,7 +100,10 @@ _Open your browser at: `http://localhost:4200_`
 {
   "title": "Complete Project",
   "description": "Finish the README documentation",
-  "userId": "1"
+  "userId": "1",
+  "createdAt": "2026-02-12T20:05:51.622Z",
+  "isCompleted": false,
+  "isDeleted": false
 }
 ```
 
@@ -156,6 +159,7 @@ dotnet test
 
 - Mobile: +962790132315
 - Email: abudalou.mohammad@gmail.com
+- Github: https://github.com/mohammad-ali-abudalou/
 - LinkedIn: https://www.linkedin.com/in/mohammad-ali-abudalou/
 
 ---

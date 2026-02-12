@@ -49,6 +49,7 @@ Global Exception Handling: Centralized middleware for consistent API error respo
 
 - Mobile: +962790132315
 - Email: abudalou.mohammad@gmail.com
+- Github: https://github.com/mohammad-ali-abudalou/
 - LinkedIn: https://www.linkedin.com/in/mohammad-ali-abudalou/
 
 ---
